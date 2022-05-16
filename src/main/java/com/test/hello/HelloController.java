@@ -17,7 +17,7 @@ public class HelloController {
 
     @GetMapping
     public String helloGet(@RequestHeader Map<String, Object> headers,
-                        @RequestBody String body) {
+                           @RequestBody(required = false) String body) {
         log.info("[Get] Request Header {}", headers);
         log.info("[Get] Request Body {}", body);
         return "[Get] Hello";
@@ -25,7 +25,7 @@ public class HelloController {
 
     @PostMapping
     public String helloPost(@RequestHeader Map<String, Object> headers,
-                        @RequestBody String body) {
+                            @RequestBody(required = false) String body) {
         log.info("[Post] Request Header {}", headers);
         log.info("[Post] Request Body {}", body);
         return "[Post] Hello";
@@ -33,7 +33,7 @@ public class HelloController {
 
     @PutMapping
     public String helloPut(@RequestHeader Map<String, Object> headers,
-                        @RequestBody String body) {
+                           @RequestBody(required = false) String body) {
         log.info("[Put] Request Header {}", headers);
         log.info("[Put] Request Body {}", body);
         return "[Put] Hello";
@@ -41,7 +41,7 @@ public class HelloController {
 
     @DeleteMapping
     public String helloDelete(@RequestHeader Map<String, Object> headers,
-                        @RequestBody String body) {
+                              @RequestBody(required = false) String body) {
         log.info("[Delete] Request Header {}", headers);
         log.info("[Delete] Request Body {}", body);
         return "[Delete] Hello";
